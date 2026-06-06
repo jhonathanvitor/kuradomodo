@@ -13,7 +13,8 @@ class Equipe extends Model
         'cargo',
         'foto',
         'descricao',
-        'links'
+        'links',
+        'ordem'
     ];
 
     protected $casts = [

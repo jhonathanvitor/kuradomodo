@@ -63,6 +63,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('equipe', [EquipeController::class, 'index'])->name('equipe.index');
     Route::get('equipe/create', [EquipeController::class, 'create'])->name('equipe.create');
     Route::post('equipe', [EquipeController::class, 'store'])->name('equipe.store');
+    Route::post('equipe/reorder', [EquipeController::class, 'reorder'])->name('equipe.reorder'); // deve ficar antes de {equipe}
     Route::get('equipe/{equipe}/edit', [EquipeController::class, 'edit'])->name('equipe.edit');
     Route::put('equipe/{equipe}', [EquipeController::class, 'update'])->name('equipe.update');
     Route::delete('equipe/{equipe}', [EquipeController::class, 'destroy'])->name('equipe.destroy');
