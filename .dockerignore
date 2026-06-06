@@ -1,0 +1,15 @@
+.git
+.idea
+.junie
+.vscode
+bk
+bootstrap/cache/*
+node_modules
+public/build
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/framework/testing/*
+storage/framework/views/*
+storage/logs/*
+vendor
+.env

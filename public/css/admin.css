@@ -1,0 +1,104 @@
+/* Sidebar Styles */
+.sidebar {
+    transition: all 0.4s ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Main content adjustment when sidebar is present */
+.admin-content {
+    margin-left: 3.35rem;
+    transition: margin-left 0.4s ease-in-out;
+}
+
+.trix-content {
+    background-color: #f9fafb;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    padding: 0.625rem;
+    min-height: 120px;
+}
+
+.trix-content:focus-within {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Toolbar do Trix */
+trix-toolbar {
+    border: 1px solid #d1d5db;
+    border-bottom: none;
+    border-radius: 0.5rem 0.5rem 0 0;
+    background-color: #f9fafb;
+}
+
+/* Botões da toolbar */
+trix-toolbar .trix-button-group {
+    border-color: #e5e7eb;
+}
+
+trix-toolbar .trix-button {
+    border: none;
+    background: transparent;
+    color: #374151;
+}
+
+trix-toolbar .trix-button:hover {
+    background-color: #e5e7eb;
+}
+
+trix-toolbar .trix-button.trix-active {
+    background-color: #dbeafe;
+    color: #1d4ed8;
+}
+
+/* Força a exibição do botão de anexo e da caixa de diálogo do Trix */
+.trix-button-group--file-tools {
+    display: inline-block !important;
+}
+
+.trix-button--icon-attach {
+    display: inline-block !important;
+}
+
+/* Garante que o diálogo de upload (quando clica no botão) também apareça */
+trix-dialog[data-trix-dialog="file"] {
+    display: block !important;
+}
+
+trix-dialog[data-trix-dialog="file"] .trix-dialog__link-fields {
+    display: block !important;
+}
+
+/* Ajustar o editor para ficar conectado com a toolbar */
+.trix-content {
+    border-radius: 0 0 0.5rem 0.5rem;
+    border-top: none;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.mobile-open {
+        transform: translateX(0);
+    }
+
+    .admin-content {
+        margin-left: 0;
+    }
+}
+
+/* Hover effects */
+.sidebar:hover + .admin-content {
+    margin-left: 14rem;
+}
+
+@media (max-width: 768px) {
+    .sidebar:hover + .admin-content {
+        margin-left: 0;
+    }
+}
